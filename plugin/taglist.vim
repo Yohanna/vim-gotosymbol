@@ -1,7 +1,8 @@
 " File: taglist.vim
 " Author: Yegappan Lakshmanan (yegappan AT yahoo DOT com)
 " Contributions: Travis Jeffery <twitter.com/travisjeffery>
-" Version: 4.6
+"                Yohanna Gadelrab <github.com/Yohanna>
+" Taglist Version: 4.5
 " Last Modified: April 21, 2011
 " Copyright: Copyright (C) 2002-2007 Yegappan Lakshmanan
 "            Permission is hereby granted to use and distribute this code,
@@ -359,7 +360,12 @@ if !exists('loaded_taglist')
         endif
     endfunction
 
-    command! -bar -nargs=1 -complete=customlist,s:completeSymbols GotoSymbol :call s:gotoSymbol('<args>')
+    if version >= 700 " 7.0
+         command! -bar -nargs=1 -complete=customlist,s:completeSymbols GotoSymbol :call s:gotoSymbol('<args>')
+    else
+         " No auto-completion for you!
+         command! -bar -nargs=1 GotoSymbol :call s:gotoSymbol('<args>')
+    endif
 
     " restore 'cpo'
     let &cpo = s:cpo_save
