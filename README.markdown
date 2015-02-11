@@ -2,7 +2,7 @@
 
 ## Sell
 
-Hey, ever used TextMate and discovered the great *Go to Symbol* feature, but
+Hey, ever used TextMate or Sublime Text and discovered the great *Go to Symbol* feature, but
 was disheartened that it was one of the last features that hadn't been
 duplicated for Vim?
 
